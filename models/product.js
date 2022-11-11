@@ -14,7 +14,7 @@ module.exports = (sequelize) => sequelize.define('products', {
       product.createdAt = new Date();
       product.updatedAt = new Date();
     },
-    beforeUpdate: function (produt, options) {
+    beforeUpdate: function (product, options) {
       product.updatedAt = new Date();
     },
   },

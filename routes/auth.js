@@ -27,6 +27,10 @@ router.post('/login', async (req, res) => {
     return res.json({ message: 'Authenticated succesfully', token })
 })
 
+router.get('/signup', async (req, res) => {
+    return res.status(200).json({ message: 'Sí funciona esto' });
+})
+
 router.post('/signup', async (req, res) => {
     const { body } = req
 
@@ -44,6 +48,7 @@ router.post('/signup', async (req, res) => {
             email: body.email,
             password: body.password
         })
+        // await user.save()
         return res.status(200).json({ message: 'User created' })
     } else {
         return res.status(400).json({ message: 'Email already registered' })
